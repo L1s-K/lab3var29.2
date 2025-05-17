@@ -82,7 +82,7 @@ namespace lab3var29._2
             {
                 for (int i = 0; i < nodeTextBoxes.Length; i++)
                 {
-                    if (nodeTextBoxes[i] != null && Controls.Contains(nodeTextBoxes[i]))
+                    if (nodeTextBoxes[i] != null)
                     {
                         Controls.Remove(nodeTextBoxes[i]);
                         nodeTextBoxes[i].Dispose();
@@ -93,10 +93,11 @@ namespace lab3var29._2
         }
 
 
-        private void FillTreeFromInputs()
+        private void FillTreeFromTextBoxes()
         {
             for (int i = 0; i < nodeTextBoxes.Length; i++)
             {
+                
                 if (nodeTextBoxes[i] != null && nodeTextBoxes[i].Tag is TreeNode node)
                 {
                     string text = nodeTextBoxes[i].Text;
@@ -130,7 +131,7 @@ namespace lab3var29._2
 
         private void ðàçðóøåíèåÄåðåâàToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tree = null;
+            tree.Root = null;
             ClearNodeTextBoxes();
         }
 
@@ -143,11 +144,13 @@ namespace lab3var29._2
             else
             {
 
-                FillTreeFromInputs();
+                FillTreeFromTextBoxes();
 
                 if (tree.CanCreateArithmeticTree(tree.Root))
                 {
                     MessageBox.Show("Äåðåâî àðèôìåòè÷åñêîå");
+                    string formula = tree.TreeToFormula(tree.Root);
+                    MessageBox.Show($"Ôîðìóëà: {formula}\nÐåçóëüòàò: {tree.ArTreeCalculation(tree.Root)}");
                 }
                 else
                 {
@@ -155,11 +158,6 @@ namespace lab3var29._2
                 }
 
 
-                if (tree.CanCreateArithmeticTree(tree.Root))
-                {
-                    string formula = tree.TreeToFormula(tree.Root);
-                    MessageBox.Show($"Ôîðìóëà: {formula}\nÐåçóëüòàò: {tree.ArTreeCalculation(tree.Root)}");
-                }
             }
 
         }
