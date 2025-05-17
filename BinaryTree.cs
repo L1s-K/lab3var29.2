@@ -102,7 +102,7 @@ namespace lab3var29._2
 
         public bool CanCreateArithmeticTree(TreeNode root)
         {
-            bool isValidTree = true;
+            bool result = true;
 
             if (root != null)
             {
@@ -132,10 +132,10 @@ namespace lab3var29._2
                 }
 
                
-                isValidTree = currentNodeValid && leftSubtreeValid && rightSubtreeValid;
+                result = currentNodeValid && leftSubtreeValid && rightSubtreeValid;
             }
 
-            return isValidTree;
+            return result;
         }
 
         private bool IsNodeOperator(TreeNode node)

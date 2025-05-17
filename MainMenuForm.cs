@@ -27,12 +27,12 @@ namespace lab3var29._2
         {
             if (int.TryParse(TextBoxWithElementsCount.Text, out nodeCount) && nodeCount > 0)
             {
-                ClearNodeTextBoxes();
+                DeleteTextBoxes();
                 tree.Root = tree.CreateBalanced(nodeCount);
                 nodeTextBoxes = new TextBox[nodeCount];
 
                 int currentIndex = 0;
-                DisplayInputControls(tree.Root, this.Width / 2, 50, this.Width / 4, ref currentIndex);
+                DisplayTextBox(tree.Root, this.Width / 2, 50, this.Width / 4, ref currentIndex);
             }
             else
             {
@@ -44,7 +44,7 @@ namespace lab3var29._2
 
 
 
-        private void DisplayInputControls(TreeNode root, int x, int y, int offsetX, ref int index)
+        private void DisplayTextBox(TreeNode root, int x, int y, int offsetX, ref int index)
         {
             if (root != null || index < nodeTextBoxes.Length)
             {
@@ -61,13 +61,13 @@ namespace lab3var29._2
 
                 if (root.Left != null)
                 {
-                    DisplayInputControls(root.Left, x - offsetX, y + 50, offsetX / 2, ref index);
+                    DisplayTextBox(root.Left, x - offsetX, y + 50, offsetX / 2, ref index);
                 }
 
 
                 if (root.Right != null)
                 {
-                    DisplayInputControls(root.Right, x + offsetX, y + 50, offsetX / 2, ref index);
+                    DisplayTextBox(root.Right, x + offsetX, y + 50, offsetX / 2, ref index);
                 }
             }
 
@@ -76,7 +76,7 @@ namespace lab3var29._2
         }
 
 
-        private void ClearNodeTextBoxes()
+        private void DeleteTextBoxes()
         {
             if (nodeTextBoxes != null)
             {
@@ -132,7 +132,7 @@ namespace lab3var29._2
         private void ðàçðóøåíèåÄåðåâàToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tree.Root = null;
-            ClearNodeTextBoxes();
+            DeleteTextBoxes();
         }
 
         private void îáðàáîòêàÄåðåâàToolStripMenuItem_Click(object sender, EventArgs e)
