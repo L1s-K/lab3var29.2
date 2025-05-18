@@ -8,7 +8,7 @@ namespace lab3var29._2
 
         }
         BinaryTree tree = new BinaryTree();
-        private TextBox[] nodeTextBoxes; // Массив для хранения TextBox'ов
+        private TextBox[] nodeTextBoxes; 
         private int nodeCount = 0;
 
         private void оToolStripMenuItem_Click(object sender, EventArgs e)

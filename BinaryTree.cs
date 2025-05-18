@@ -102,7 +102,7 @@ namespace lab3var29._2
 
         public bool CanCreateArithmeticTree(TreeNode root)
         {
-            bool result = true;
+            bool result = false;
 
             if (root != null)
             {
