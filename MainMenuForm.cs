@@ -148,9 +148,10 @@ namespace lab3var29._2
 
                 if (tree.CanCreateArithmeticTree(tree.Root))
                 {
-                    MessageBox.Show("Дерево арифметическое");
                     string formula = tree.TreeToFormula(tree.Root);
-                    MessageBox.Show($"Формула: {formula}\nРезультат: {tree.ArTreeCalculation(tree.Root)}");
+                    MessageBox.Show($"Дерево арифметическое\nФормула: {formula}\nРезультат: {tree.ArTreeCalculation(tree.Root)}");
+                    
+                    
                 }
                 else
                 {
