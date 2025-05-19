@@ -44,7 +44,7 @@ namespace lab3var29._2
 
 
 
-        private void DisplayTextBox(TreeNode root, int x, int y, int offsetX, ref int index)
+        private void DisplayTextBox(TreeNode root, int x, int y, int deltaX, ref int index)
         {
             if (root != null)
             {
@@ -61,13 +61,13 @@ namespace lab3var29._2
 
                 if (root.Left != null)
                 {
-                    DisplayTextBox(root.Left, x - offsetX, y + 50, offsetX / 2, ref index);
+                    DisplayTextBox(root.Left, x - deltaX, y + 50, deltaX / 2, ref index);
                 }
 
 
                 if (root.Right != null)
                 {
-                    DisplayTextBox(root.Right, x + offsetX, y + 50, offsetX / 2, ref index);
+                    DisplayTextBox(root.Right, x + deltaX, y + 50, deltaX / 2, ref index);
                 }
             }
 
