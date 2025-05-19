@@ -46,7 +46,7 @@ namespace lab3var29._2
 
         private void DisplayTextBox(TreeNode root, int x, int y, int offsetX, ref int index)
         {
-            if (root != null || index < nodeTextBoxes.Length)
+            if (root != null)
             {
 
                 nodeTextBoxes[index] = new TextBox
