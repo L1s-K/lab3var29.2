@@ -106,33 +106,33 @@ namespace lab3var29._2
 
             if (root != null)
             {
-                bool currentNodeValid = false;
-                bool leftSubtreeValid = true;
-                bool rightSubtreeValid = true;
+                bool currentNodeResult = false;
+                bool leftSubtreeResult = true;
+                bool rightSubtreeResult = true;
 
                 
                 if (root.Left == null && root.Right == null)
                 {
-                    currentNodeValid = !IsNodeOperator(root); 
+                    currentNodeResult = !IsNodeOperator(root); 
                 }
                 else if (root.Left != null && root.Right != null)
                 {
-                    currentNodeValid = IsNodeOperator(root); 
+                    currentNodeResult = IsNodeOperator(root); 
                 }
 
                 
                 if (root.Left != null)
                 {
-                    leftSubtreeValid = CanCreateArithmeticTree(root.Left);
+                    leftSubtreeResult = CanCreateArithmeticTree(root.Left);
                 }
 
                 if (root.Right != null)
                 {
-                    rightSubtreeValid = CanCreateArithmeticTree(root.Right);
+                    rightSubtreeResult = CanCreateArithmeticTree(root.Right);
                 }
 
                
-                result = currentNodeValid && leftSubtreeValid && rightSubtreeValid;
+                result = currentNodeResult && leftSubtreeResult && rightSubtreeResult;
             }
 
             return result;
