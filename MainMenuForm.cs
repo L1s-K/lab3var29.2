@@ -132,6 +132,7 @@ namespace lab3var29._2
         private void разрушениеДереваToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tree.Root = null;
+            nodeCount = 0;
             DeleteTextBoxes();
         }
 

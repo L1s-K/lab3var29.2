@@ -9,13 +9,13 @@
 
         public char NodeType
         {
-            get => nodeType;
-            set => nodeType = value;
+            get { return nodeType; }
+            set { nodeType = value; }
         }
         public double Data
         {
-            get => data;
-            set => data = value;
+            get { return data; }
+            set { data = value; }
         }
         public TreeNode Left
         {
@@ -58,7 +58,7 @@
         public TreeNode CreateBalanced(int n)
         {
             TreeNode node = new TreeNode();
-            if (n < 0)
+            if (n > 0)
             {
                 node.Left = CreateBalanced(n / 2);
                 node.Right = CreateBalanced(n - (n / 2) - 1);
@@ -100,7 +100,7 @@
                         break;
                 }
             }
-            return mainResult;
+            return Math.Round(mainResult, 4);
         }
 
         public bool CanCreateArithmeticTree(TreeNode root)
