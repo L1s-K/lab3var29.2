@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace lab3var29._2
+﻿namespace lab3var29._2
 {
     public class TreeNode
     {
@@ -59,11 +57,16 @@ namespace lab3var29._2
 
         public TreeNode CreateBalanced(int n)
         {
-            if (n == 0) return null;
-
             TreeNode node = new TreeNode();
-            node.Left = CreateBalanced(n / 2);
-            node.Right = CreateBalanced(n - (n / 2) - 1);
+            if (n < 0)
+            {
+                node.Left = CreateBalanced(n / 2);
+                node.Right = CreateBalanced(n - (n / 2) - 1);
+            }
+            else
+            {
+                node = null;
+            }
             return node;
         }
 
@@ -79,7 +82,7 @@ namespace lab3var29._2
                 {
                     mainResult = root.Data;
                 }
-                
+
 
                 switch (root.NodeType)
                 {
@@ -110,17 +113,17 @@ namespace lab3var29._2
                 bool leftSubtreeResult = true;
                 bool rightSubtreeResult = true;
 
-                
+
                 if (root.Left == null && root.Right == null)
                 {
-                    currentNodeResult = !IsNodeOperator(root); 
+                    currentNodeResult = !IsNodeOperator(root);
                 }
                 else if (root.Left != null && root.Right != null)
                 {
-                    currentNodeResult = IsNodeOperator(root); 
+                    currentNodeResult = IsNodeOperator(root);
                 }
 
-                
+
                 if (root.Left != null)
                 {
                     leftSubtreeResult = CanCreateArithmeticTree(root.Left);
@@ -131,7 +134,7 @@ namespace lab3var29._2
                     rightSubtreeResult = CanCreateArithmeticTree(root.Right);
                 }
 
-               
+
                 result = currentNodeResult && leftSubtreeResult && rightSubtreeResult;
             }
 
@@ -141,7 +144,7 @@ namespace lab3var29._2
         private bool IsNodeOperator(TreeNode node)
         {
             bool result = false;
-            if (node.NodeType == '+' || node.NodeType == '-' || node.NodeType == '*' || node.NodeType == '/') 
+            if (node.NodeType == '+' || node.NodeType == '-' || node.NodeType == '*' || node.NodeType == '/')
             {
                 result = true;
             }
@@ -162,7 +165,7 @@ namespace lab3var29._2
                 }
                 else
                 {
-                    result = $"({TreeToFormula(root.Left)} {root.NodeType} {TreeToFormula(root.Right)})";
+                    result = "(" + TreeToFormula(root.Left) + " " + root.NodeType + " " + TreeToFormula(root.Right) + ")";
                 }
             }
 

@@ -8,7 +8,7 @@ namespace lab3var29._2
 
         }
         BinaryTree tree = new BinaryTree();
-        private TextBox[] nodeTextBoxes; 
+        private TextBox[] nodeTextBoxes;
         private int nodeCount = 0;
 
         private void оToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,7 +97,7 @@ namespace lab3var29._2
         {
             for (int i = 0; i < nodeTextBoxes.Length; i++)
             {
-                
+
                 if (nodeTextBoxes[i] != null && nodeTextBoxes[i].Tag is TreeNode node)
                 {
                     string text = nodeTextBoxes[i].Text;
@@ -149,9 +149,9 @@ namespace lab3var29._2
                 if (tree.CanCreateArithmeticTree(tree.Root))
                 {
                     string formula = tree.TreeToFormula(tree.Root);
-                    MessageBox.Show($"Дерево арифметическое\nФормула: {formula}\nРезультат: {tree.ArTreeCalculation(tree.Root)}");
-                    
-                    
+                    MessageBox.Show("Дерево арифметическое\nФормула: " + formula + "\nРезультат:  " + tree.ArTreeCalculation(tree.Root));
+
+
                 }
                 else
                 {
