@@ -10,19 +10,19 @@ namespace lab3var29._2
         private TextBox[] nodeTextBoxes;
         private int nodeCount = 0;
 
-        private void îToolStripMenuItem_Click(object sender, EventArgs e)
+        private void оToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Àâòîð: Þõíåâè÷ Ã.Ñ.\nÃðóïïà: 6106-090301D");
+            MessageBox.Show("Автор: Юхневич Г.С.\nГруппа: 6106-090301D");
         }
 
-        private void âûõîäToolStripMenuItem_Click(object sender, EventArgs e)
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
 
 
-        private void ñîçäàòüÄåðåâîToolStripMenuItem_Click(object sender, EventArgs e)
+        private void создатьДеревоToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             if (int.TryParse(TextBoxWithElementsCount.Text, out nodeCount) && nodeCount > 0)
@@ -37,7 +37,7 @@ namespace lab3var29._2
             }
             else
             {
-                MessageBox.Show("Ââåäèòå êîððåêòíîå êîëè÷åñòâî ýëåìåíòîâ (ïîëîæèòåëüíîå ÷èñëî)");
+                MessageBox.Show("Введите правильное количество узлов");
             }
         }
 
@@ -130,18 +130,18 @@ namespace lab3var29._2
         }
 
 
-        private void ðàçðóøåíèåÄåðåâàToolStripMenuItem_Click(object sender, EventArgs e)
+        private void разрушениеДереваToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tree.Root = null;
             nodeCount = 0;
             DeleteTextBoxes();
         }
 
-        private void îáðàáîòêàÄåðåâàToolStripMenuItem_Click(object sender, EventArgs e)
+        private void обработкаДереваToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (nodeTextBoxes == null || tree.Root == null)
             {
-                MessageBox.Show("Ñíà÷àëà ñîçäàéòå äåðåâî");
+                MessageBox.Show("Сначала создайте дерево");
             }
             else
             {
@@ -151,13 +151,13 @@ namespace lab3var29._2
                 if (tree.CanCreateArithmeticTree(tree.Root))
                 {
                     string formula = tree.TreeToFormula(tree.Root);
-                    MessageBox.Show("Äåðåâî àðèôìåòè÷åñêîå\nÔîðìóëà: " + formula + "\nÐåçóëüòàò:  " + tree.ArTreeCalculation(tree.Root));
+                    MessageBox.Show("Дерево является арифметическим\nФормула: " + formula + "\nРезультат:  " + tree.ArTreeCalculation(tree.Root));
 
 
                 }
                 else
                 {
-                    MessageBox.Show("Äåðåâî íå ÿâëÿåòñÿ àðèôìåòè÷åñêèì");
+                    MessageBox.Show("Дерево не арифметическое");
                 }
 
 
