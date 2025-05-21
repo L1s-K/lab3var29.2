@@ -141,10 +141,10 @@
             return result;
         }
 
-        private bool IsNodeOperator(TreeNode node)
+        private bool IsNodeOperator(TreeNode root)
         {
             bool result = false;
-            if (node.NodeType == '+' || node.NodeType == '-' || node.NodeType == '*' || node.NodeType == '/')
+            if (root.NodeType == '+' || root.NodeType == '-' || root.NodeType == '*' || root.NodeType == '/')
             {
                 result = true;
             }
