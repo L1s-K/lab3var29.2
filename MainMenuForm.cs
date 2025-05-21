@@ -10,19 +10,19 @@ namespace lab3var29._2
         private TextBox[] nodeTextBoxes;
         private int nodeCount = 0;
 
-        private void оToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Г®ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Автор: Юхневич Г.С.\nГруппа: 6106-090301D");
+            MessageBox.Show("ГЂГўГІГ®Г°: ГћГµГ­ГҐГўГЁГ· Гѓ.Г‘.\nГѓГ°ГіГЇГЇГ : 6106-090301D");
         }
 
-        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ГўГ»ГµГ®Г¤ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
 
 
-        private void создатьДеревоToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Г±Г®Г§Г¤Г ГІГјГ„ГҐГ°ГҐГўГ®ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             if (int.TryParse(TextBoxWithElementsCount.Text, out nodeCount) && nodeCount > 0)
@@ -37,7 +37,7 @@ namespace lab3var29._2
             }
             else
             {
-                MessageBox.Show("Введите корректное количество элементов (положительное число)");
+                MessageBox.Show("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г°Г°ГҐГЄГІГ­Г®ГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ®Гў (ГЇГ®Г«Г®Г¦ГЁГІГҐГ«ГјГ­Г®ГҐ Г·ГЁГ±Г«Г®)");
             }
         }
 
@@ -45,7 +45,7 @@ namespace lab3var29._2
 
 
 
-        private void DisplayTextBox(TreeNode root, int x, int y, int deltaX, ref int index)
+        private void DisplayTextBox(TreeNode root, int x, int y, int deltaX, ref int index) // СЃРїСЂСЏС‚Р°С‚СЊ "РєРѕСЂРЅРё" РІ РєР»Р°СЃСЃ РґРµСЂРµРІР°, Р° РєР°Рє РёС… СЃРїСЂСЏС‚Р°С‚СЊ РµСЃР»Рё СЏ СЃРІСЏР·С‹РІР°СЋ textbox СЃ СѓР·Р»РѕРј РґРµСЂРµРІР°
         {
             if (root != null)
             {
@@ -130,18 +130,18 @@ namespace lab3var29._2
         }
 
 
-        private void разрушениеДереваToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Г°Г Г§Г°ГіГёГҐГ­ГЁГҐГ„ГҐГ°ГҐГўГ ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tree.Root = null;
             nodeCount = 0;
             DeleteTextBoxes();
         }
 
-        private void обработкаДереваToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Г®ГЎГ°Г ГЎГ®ГІГЄГ Г„ГҐГ°ГҐГўГ ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (nodeTextBoxes == null || tree.Root == null)
             {
-                MessageBox.Show("Сначала создайте дерево");
+                MessageBox.Show("Г‘Г­Г Г·Г Г«Г  Г±Г®Г§Г¤Г Г©ГІГҐ Г¤ГҐГ°ГҐГўГ®");
             }
             else
             {
@@ -151,13 +151,13 @@ namespace lab3var29._2
                 if (tree.CanCreateArithmeticTree(tree.Root))
                 {
                     string formula = tree.TreeToFormula(tree.Root);
-                    MessageBox.Show("Дерево арифметическое\nФормула: " + formula + "\nРезультат:  " + tree.ArTreeCalculation(tree.Root));
+                    MessageBox.Show("Г„ГҐГ°ГҐГўГ® Г Г°ГЁГґГ¬ГҐГІГЁГ·ГҐГ±ГЄГ®ГҐ\nГ”Г®Г°Г¬ГіГ«Г : " + formula + "\nГђГҐГ§ГіГ«ГјГІГ ГІ:  " + tree.ArTreeCalculation(tree.Root));
 
 
                 }
                 else
                 {
-                    MessageBox.Show("Дерево не является арифметическим");
+                    MessageBox.Show("Г„ГҐГ°ГҐГўГ® Г­ГҐ ГїГўГ«ГїГҐГІГ±Гї Г Г°ГЁГґГ¬ГҐГІГЁГ·ГҐГ±ГЄГЁГ¬");
                 }
 
 
