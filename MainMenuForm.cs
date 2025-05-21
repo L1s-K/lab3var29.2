@@ -33,7 +33,7 @@ namespace lab3var29._2
                 nodeTextBoxes = new TextBox[nodeCount];
 
                 int currentIndex = 0;
-                DisplayTextBox(tree.Root, this.Width / 2, 50, this.Width / 4, ref currentIndex);
+                DisplayTextBox(this.Width / 2, 50, this.Width / 4, ref currentIndex);
             }
             else
             {
@@ -45,34 +45,20 @@ namespace lab3var29._2
 
 
 
-        private void DisplayTextBox(TreeNode root, int x, int y, int deltaX, ref int index) // спрятать "корни" в класс дерева, а как их спрятать если я связываю textbox с узлом дерева
+        private void DisplayTextBox(int x, int y, int deltaX, ref int index)
         {
-            if (root != null)
+            tree.ConfigTextboxesForNewTree(ref nodeTextBoxes, tree.Root, x, y, deltaX, ref index);
+            if (nodeTextBoxes != null)
             {
-
-                nodeTextBoxes[index] = new TextBox
+                for (int i = 0; i < nodeTextBoxes.Length; i++)
                 {
-                    Width = 50,
-                    Location = new Point(x, y),
-                    Tag = root
-                };
-                Controls.Add(nodeTextBoxes[index]);
-                index++;
-
-
-                if (root.Left != null)
-                {
-                    DisplayTextBox(root.Left, x - deltaX, y + 50, deltaX / 2, ref index);
-                }
-
-
-                if (root.Right != null)
-                {
-                    DisplayTextBox(root.Right, x + deltaX, y + 50, deltaX / 2, ref index);
+                    Controls.Add(nodeTextBoxes[i]);
                 }
             }
-
-
+            else
+            {
+                MessageBox.Show("Сначала создайте дерево");
+            }
 
         }
 

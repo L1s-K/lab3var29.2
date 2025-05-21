@@ -172,5 +172,39 @@
             return result;
         }
 
+        public void ConfigTextboxesForNewTree(ref TextBox[] textBoxes, TreeNode root, int x, int y, int deltaX, ref int index)
+        {
+
+            if (root != null)
+            {
+
+                textBoxes[index] = new TextBox
+                {
+                    Width = 50,
+                    Location = new Point(x, y),
+                    Tag = root
+                };
+                index++;
+
+
+                if (root.Left != null)
+                {
+                    ConfigTextboxesForNewTree(ref textBoxes, root.Left, x - deltaX, y + 50, deltaX / 2, ref index);
+                }
+
+
+                if (root.Right != null)
+                {
+                    ConfigTextboxesForNewTree(ref textBoxes, root.Right, x + deltaX, y + 50, deltaX / 2, ref index);
+                }
+
+            }
+            else
+            {
+                textBoxes = null;
+            }
+
+        }
+
     }
 }
