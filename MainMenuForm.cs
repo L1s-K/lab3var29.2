@@ -24,11 +24,11 @@ namespace lab3var29._2
 
         private void создатьДеревоToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             if (int.TryParse(TextBoxWithElementsCount.Text, out nodeCount) && nodeCount > 0)
             {
                 DeleteTextBoxes();
-                
+
                 tree.Root = tree.CreateBalanced(nodeCount);
                 nodeTextBoxes = new TextBox[nodeCount];
 
