@@ -44,7 +44,7 @@ namespace lab3var29._2
 
 
 
-        private void DisplayTextBox(TreeNode root, int x, int y, int deltaX, ref int index) // спрятать "корни" в класс дерева
+        private void DisplayTextBox(TreeNode root, int x, int y, int deltaX, ref int index) // спрятать "корни" в класс дерева, а как их спрятать если я связываю textbox с узлом дерева
         {
             if (root != null)
             {
